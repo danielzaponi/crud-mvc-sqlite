@@ -33,7 +33,8 @@ abstract class BaseController extends Controller
 
     public function __construct()
     {
-        $config = new CustomConfig();
+        $config = $config = config('CustomConfig');
+
         $this->urls = $config->urls;
     }
 
@@ -68,7 +69,7 @@ abstract class BaseController extends Controller
 
     protected function render($view, $data = [])
     {
-        $data['urls'] = $this->urls; // Adiciona as URLs ao array de dados
+        $data['urls'] = $this->urls ?? [];
         echo view('templates/header', $data);
         echo view($view, $data);
         echo view('templates/footer', $data);

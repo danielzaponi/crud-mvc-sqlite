@@ -30,7 +30,7 @@
 
 
 <!-- Modal -->
-<div class="modal" id="modalUsuario" tabindex="-1">
+<div class="modal fade" id="modalUsuario" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content shadow-lg">
             <div class="modal-header">

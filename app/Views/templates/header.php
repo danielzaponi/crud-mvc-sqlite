@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <pre>
+<?php print_r($urls); ?>
+</pre>
+
     <!-- Navbar com Logo -->
     <nav class="navbar navbar-expand-lg bg-primary shadow-lg mb-5 fixed-top">
         <div class="container-fluid">
