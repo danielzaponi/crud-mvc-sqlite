@@ -8,6 +8,8 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Config\CustomConfig;
+
 
 /**
  * Class BaseController
@@ -27,6 +29,14 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $urls;
+
+    public function __construct()
+    {
+        $config = new CustomConfig();
+        $this->urls = $config->urls;
+    }
+
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -54,6 +64,14 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+    }
+
+    protected function render($view, $data = [])
+    {
+        $data['urls'] = $this->urls; // Adiciona as URLs ao array de dados
+        echo view('templates/header', $data);
+        echo view($view, $data);
+        echo view('templates/footer', $data);
     }
 
     protected function datatablesResponse($builder, $columns)

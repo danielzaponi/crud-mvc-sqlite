@@ -19,8 +19,11 @@ class UserController extends BaseController
         // Retornar a view principal
         $data = [
             'title' => 'Lista de Usuários',
+            'scripts' => [
+                'users' // Nome do script JS específico para usuários
+            ]
         ];
-        return view('users/index',$data);
+        $this->render('users/index', $data);
     }
     // Listar usuários com paginação
 

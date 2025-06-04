@@ -19,8 +19,11 @@ class InternacoesController extends BaseController
     {
         $data = [
             'title' => 'Internações',
+            'scripts' => [
+                'internacoes'
+            ],
         ];
-        return view('internacoes/index', $data);
+        $this->render('internacoes/index', $data);
     }
 
     public function list()
