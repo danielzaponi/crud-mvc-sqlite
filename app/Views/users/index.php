@@ -2,10 +2,10 @@
     <h3><?= $title ?></h3>
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-success md-1 mb-2" onclick="abrirModal()">
+            <button class="btn btn-success mb-2" onclick="abrirModal()">
                 <i class='fas fa-plus'></i>
             </button>
-            <button class="btn btn-success md-1 mb-2" onclick="carregarUsuarios()">
+            <button class="btn btn-secondary mb-2" onclick="carregarUsuarios()">
                 <i class='fas fa-refresh'></i>
             </button>
         </div>

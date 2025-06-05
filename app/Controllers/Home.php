@@ -4,8 +4,11 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index(): void
     {
-        return view('welcome_message');
+       $data = [
+            'title' => 'Seja bem-vindo'
+        ];
+        $this->render('home/index', $data);
     }
 }

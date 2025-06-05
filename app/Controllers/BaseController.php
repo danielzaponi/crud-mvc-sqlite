@@ -8,7 +8,6 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
-use Config\CustomConfig;
 
 
 /**
@@ -29,15 +28,6 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
-    protected $urls;
-
-    public function __construct()
-    {
-        $config = $config = config('CustomConfig');
-
-        $this->urls = $config->urls;
-    }
-
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -47,6 +37,13 @@ abstract class BaseController extends Controller
      * @var list<string>
      */
     protected $helpers = [];
+
+
+    protected $navItems = [
+        ['name' => 'Início', 'route' => 'home'],
+        ['name' => 'Internações', 'route' => 'internacoes'],
+        ['name' => 'Usuários', 'route' => 'users']
+    ];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -69,7 +66,7 @@ abstract class BaseController extends Controller
 
     protected function render($view, $data = [])
     {
-        $data['urls'] = $this->urls ?? [];
+        $data['urls'] = $this->navItems; // inclui os itens da navbar
         echo view('templates/header', $data);
         echo view($view, $data);
         echo view('templates/footer', $data);

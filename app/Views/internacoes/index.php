@@ -1,10 +1,10 @@
 <div class="container mt-5 pt-4">
     <h2>Lista de Internações</h2>
     <button class="btn btn-success mb-2" onclick="abrirModal()">
-        <i class="fas fa-plus"></i> Novo
+        <i class="fas fa-plus"></i>
     </button>
     <button class="btn btn-secondary mb-2" onclick="carregarInternacoes()">
-        <i class="fas fa-sync-alt"></i> Atualizar
+        <i class="fas fa-sync-alt"></i>
     </button>
 
     <table id="tabela" class="table table-striped table-hover table-sm">
