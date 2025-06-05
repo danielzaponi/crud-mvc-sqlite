@@ -1,28 +1,34 @@
 <div class="container mt-5 pt-4">
     <h2>Lista de Internações</h2>
-    <button class="btn btn-success mb-2" onclick="abrirModal()">
-        <i class="fas fa-plus"></i>
-    </button>
-    <button class="btn btn-secondary mb-2" onclick="carregarInternacoes()">
-        <i class="fas fa-sync-alt"></i>
-    </button>
+    <div class="card">
+        <div class="card-header">
+            <button class="btn btn-success mb-2" onclick="abrirModal()">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-secondary mb-2" onclick="carregarInternacoes()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <table id="tabela" class="table table-striped table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Paciente</th>
+                        <th>Sexo</th>
+                        <th>Apartamento</th>
+                        <th>Leito</th>
+                        <th>Convênio</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados preenchidos pelo DataTables -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    <table id="tabela" class="table table-striped table-hover table-sm">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Paciente</th>
-                <th>Sexo</th>
-                <th>Apartamento</th>
-                <th>Leito</th>
-                <th>Convênio</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dados preenchidos pelo DataTables -->
-        </tbody>
-    </table>
 </div>
 
 <!-- Modal de Internação -->
